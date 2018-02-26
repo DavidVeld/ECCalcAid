@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECCalcAid", "ECCalcAid\ECCalcAid.csproj", "{76400433-A5EC-4EB3-9916-389930576B05}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E} = {8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECCalcAidRevit", "ECCalcAidRevit\ECCalcAidRevit.csproj", "{AB548293-724D-46AF-AD1E-0E68679A843F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E} = {8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECCalcAidEngine", "ECCalcAidEngine\ECCalcAidEngine.csproj", "{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{764EAF19-510F-4464-BC09-067CDD56F3FD} = {764EAF19-510F-4464-BC09-067CDD56F3FD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECCalcAidData", "ECCalcAidData\ECCalcAidData.csproj", "{764EAF19-510F-4464-BC09-067CDD56F3FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECCalcAidDataBuilder", "ECCalcAidDataBuilder\ECCalcAidDataBuilder.csproj", "{61E6C0B7-DA16-41C8-8726-DBD3D2D11D85}"
+	ProjectSection(ProjectDependencies) = postProject
+		{764EAF19-510F-4464-BC09-067CDD56F3FD} = {764EAF19-510F-4464-BC09-067CDD56F3FD}
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E} = {8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76400433-A5EC-4EB3-9916-389930576B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76400433-A5EC-4EB3-9916-389930576B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76400433-A5EC-4EB3-9916-389930576B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76400433-A5EC-4EB3-9916-389930576B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB548293-724D-46AF-AD1E-0E68679A843F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB548293-724D-46AF-AD1E-0E68679A843F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB548293-724D-46AF-AD1E-0E68679A843F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB548293-724D-46AF-AD1E-0E68679A843F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED2A3F8-6126-4D21-B77F-34D4D01B9B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764EAF19-510F-4464-BC09-067CDD56F3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764EAF19-510F-4464-BC09-067CDD56F3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764EAF19-510F-4464-BC09-067CDD56F3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764EAF19-510F-4464-BC09-067CDD56F3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E6C0B7-DA16-41C8-8726-DBD3D2D11D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E6C0B7-DA16-41C8-8726-DBD3D2D11D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E6C0B7-DA16-41C8-8726-DBD3D2D11D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E6C0B7-DA16-41C8-8726-DBD3D2D11D85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {463FF509-5675-463B-9006-653C16B34C8B}
+	EndGlobalSection
+EndGlobal

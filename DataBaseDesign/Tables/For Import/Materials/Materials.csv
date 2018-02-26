@@ -1,0 +1,5 @@
+Id,Name,CategoryName,SubCategory,Comment,E_pl,Yield,Tensile,thermalExpansion,,fy,fu
+,S235,Steel,-,-,5000,,,,,235,360
+,S275,,,,,,,,,275,430
+,S355,,,,,,,,,355,490
+,S450,,,,,,,,,440,550

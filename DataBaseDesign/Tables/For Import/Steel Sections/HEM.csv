@@ -1,0 +1,25 @@
+Id,Designation,Comment,G,h,b,tw,tf,r,d,cw/tw,cf/tf,C,N,n,m2/m1,m2/T,Iy,Iz,iy,iz,Wely,Welz,Wply,Wplz,U,X,Iw,IT,A,e0,r1,r2,cy,cz,Iu,Iv,iu,iv,?a min,?a max,Tan ?,?a,d/t,Wt,c/t
+Unique Nr,Name,Comment,Mass per Metre,Depth of Section,Width of Section,Web Thickness,Flange Thickness,Root Radius,Depth between Fillets,Ratios for Local Buckling,Ratios for Local Buckling,End Clearance,Notch,Notch,Surface Area per Metre,Surface Area per Tonne,Second Moment of Area y,Second Moment of Area z,"Radius of
+Gyration y","Radius of
+Gyration z","Elastic
+Modulus y","Elastic
+Modulus z","Plastic
+Modulus y","Plastic
+Modulus z","Buckling
+Parameter","Torsional
+Index","Warping
+Constant","Torsional
+Constant","Area
+of
+Section",Distance,Root Radius,Toe Radius,Distance To Centroid,Distance To Centroid,Second Moment of Area,Second Moment of Area,"Radius of
+Gyration","Radius of
+Gyration","Equivalent
+Slenderness
+Coefficient","Equivalent
+Slenderness
+Coefficient","Angle
+y-y to u-u","Mono-
+symmetry
+Index",Ratios for Local Buckling,"Torsional
+Constant",Ratios for Local Buckling
+Nr,-,-,kg/m,mm,mm,mm,mm,mm,mm,-,-,mm,mm,mm,,,cm4 ,cm4 ,cm,cm,cm3,cm3,cm3,cm3,,,cm4,cm4,mm2,,,,,,cm4 ,cm4 ,cm,cm,double,double,,,-,cm4,-
