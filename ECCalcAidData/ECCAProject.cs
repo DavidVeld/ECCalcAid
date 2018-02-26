@@ -86,7 +86,7 @@ namespace ECCalcAidData
                     }
 
                     FileLocation = "";
-
+                    ///emm
                     AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
 
                     IFormatter formatter = new BinaryFormatter();
