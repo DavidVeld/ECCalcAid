@@ -80,7 +80,12 @@ namespace ECCalcAidData
                     {
                         savePath = FileLocation;
                     }
+                    //This is a save ass
                     else if(FileLocation == "" && pathName != "")
+                    {
+                        savePath = pathName;
+                    }
+                    else
                     {
                         savePath = pathName;
                     }
@@ -94,11 +99,16 @@ namespace ECCalcAidData
                     formatter.Serialize(stream, this);
                     stream.Close();
                     result = true;
+
+                    //Rset FilePath
+                    FileLocation = savePath;
+
                 }
                 else
                 {
                     result = false;
                     MessageBox.Show("A filePath could not be found, save project file first");
+                    FileLocation = savePath;
                 }
             }
             catch (Exception ex)

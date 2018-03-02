@@ -55,6 +55,7 @@
     <Compile Include="Forms\frm_ECCAProgram.xaml.cs">
       <DependentUpon>frm_ECCAProgram.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\ImageGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

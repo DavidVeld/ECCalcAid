@@ -70,67 +70,7 @@ namespace ECCalcAidData
             result = feetValue * 304.8;
             return result;
         }
-
-        //Below old code to generate datatables these became generic later
-        /*
-        /// <summary>
-        /// Returns a DataTable from a List for presentaiton purposes
-        /// </summary>
-        /// <param name="eccaSectionList"></param>
-        /// <returns></returns>
-        public static DataTable SectionListToDataTable(IList<ECCASection> eccaSectionList)
-        {
-            FieldInfo[] fieldValues = typeof(ECCASection).GetFields();
-
-            DataTable table = new DataTable();
-            for (int i = 0; i < fieldValues.Length; i++)
-            {
-                FieldInfo field = fieldValues[i];
-                table.Columns.Add(field.Name, field.FieldType);
-            }
-
-            object[] values = new object[fieldValues.Length];
-
-            foreach (ECCASection item in eccaSectionList)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    values[i] = fieldValues[i].GetValue(item);
-                }
-                table.Rows.Add(values);
-            }
-            return table;
-        }
-
-        /// <summary>
-        /// Returns a DataTable from a List for presentaiton purposes
-        /// </summary>
-        /// <param name="eccaSectionList"></param>
-        /// <returns></returns>
-        public static DataTable MaterialListToDataTable(IList<ECCAMaterial> eccaMaterialList)
-        {
-            FieldInfo[] fieldValues = typeof(ECCAMaterial).GetFields();
-
-            DataTable table = new DataTable();
-            for (int i = 0; i < fieldValues.Length; i++)
-            {
-                FieldInfo field = fieldValues[i];
-                table.Columns.Add(field.Name, field.FieldType);
-            }
-
-            object[] values = new object[fieldValues.Length];
-
-            foreach (ECCAMaterial item in eccaMaterialList)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    values[i] = fieldValues[i].GetValue(item);
-                }
-                table.Rows.Add(values);
-            }
-            return table;
-        }
-        */
+        
 
         /// <summary>
         /// Generic Convertion from List to datatable
@@ -168,11 +108,20 @@ namespace ECCalcAidData
             }
             return table;
         }
-    
 
+        public static string ConvertMeToString(string stringValue)
+        {
+            string result = "";
 
+            if(stringValue != null)
+            {
+                result = stringValue;
+            }
 
-    public static double ConvertMeToDouble(string value)
+            return result;
+        }
+
+        public static double ConvertMeToDouble(string value)
         {
             double result = 0;
 

@@ -16,6 +16,17 @@ namespace ECCalcAidData.Elements
         public string Comment;
         public string Action;
 
+        /// <summary>
+        /// Direct storage of the name for library search
+        /// </summary>
+        public string RevitSectionName;
+
+        /// <summary>
+        /// Direct Storage of 
+        /// </summary>
+        public string RevitMaterialName;
+
+
         public ECCAMaterial Material;
         public ECCASection Section;
         public ECCALoads Loads;

@@ -23,10 +23,20 @@ namespace ECCalcAidRevit.Commands
             UIApplication app = commandData.Application;
             UIDocument uidoc = app.ActiveUIDocument;
             Document doc = uidoc.Document;
-            
-            
-            string MyRevitProjectLodcation = doc.PathName;
-            string MyECCAFile = Path.GetDirectoryName(MyRevitProjectLodcation) + "\\ECCalcAidFile.bin";
+
+            string expetedfilesavepath = "";
+            if(doc.IsWorkshared)
+            {
+                expetedfilesavepath = ModelPathUtils.ConvertModelPathToUserVisiblePath(doc.GetWorksharingCentralModelPath());
+            }
+            else
+            {
+                expetedfilesavepath = doc.PathName;
+            }
+
+            string MyECCAFile = Path.GetDirectoryName(expetedfilesavepath) + "\\ECCalcAidFile.bin";
+
+
 
             ECCAProject myProject = new ECCAProject(MyECCAFile);
 
@@ -37,15 +47,28 @@ namespace ECCalcAidRevit.Commands
                 {
                     Element selectedBeam = doc.GetElement(selectedElements[0]);
                     bool validStructuralBeam = ValidateStructuralBeam(selectedBeam);
-                    if(validStructuralBeam == true)
-                        MessageBox.Show("You selected a Valid beam");
 
-                    ECCABeam newBeam = ConvertToECCABeam(selectedBeam);
+                    if (validStructuralBeam == true)
+                    {
 
-                    frm_ECCAProgram ECCAMainProgram = new frm_ECCAProgram(myProject, newBeam);
+                        ECCABeam newBeam = ConvertToECCABeam(selectedBeam);
+
+                        
+                        if(!(myProject.BeamCollection.IsUnique(newBeam)))
+                        {
+                            MessageBox.Show("Note this beam already exisits in the collection, do you want to reset its properties?","Warning ",MessageBoxButton.YesNo,MessageBoxImage.Warning);
+                        }
+                        
+
+                        frm_ECCAProgram ECCAMainProgram = new frm_ECCAProgram(myProject, newBeam);
 
 
-                    ECCAMainProgram.ShowDialog();
+                        ECCAMainProgram.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The element you selected cannot be read as a structural beam");
+                    }
                 }
 
                 //serialisation test
@@ -60,15 +83,22 @@ namespace ECCalcAidRevit.Commands
 
         private ECCABeam ConvertToECCABeam(Element selectedBeam)
         {
+            FamilyInstance selectedBeamAsfamInst = selectedBeam as FamilyInstance;
+            
             ECCABeam result = new ECCABeam();
+
+            BuiltInParameter lengthBIPar = BuiltInParameter.STRUCTURAL_FRAME_CUT_LENGTH;
+            Parameter lengthPar = selectedBeam.get_Parameter(lengthBIPar);
+
+            string MaterialName = selectedBeamAsfamInst.StructuralMaterialType.ToString();
+
+            FamilySymbol sectionSymbol = selectedBeamAsfamInst.Symbol;
+
             result.Id = selectedBeam.Id.IntegerValue;
             result.RevitUId = selectedBeam.UniqueId;
-
-
-            BuiltInParameter paraIndex = BuiltInParameter.STRUCTURAL_FRAME_CUT_LENGTH;
-            Parameter parameter = selectedBeam.get_Parameter(paraIndex);
-            result.Length = Utils.FeetTomm(parameter.AsDouble());
-
+            result.Length = Utils.FeetTomm(lengthPar.AsDouble());
+            result.RevitSectionName = sectionSymbol.Name;
+            result.RevitMaterialName = MaterialName;
 
             return result;
         }
